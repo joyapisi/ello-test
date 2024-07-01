@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SearchProvider } from "./components/searchContext";
-// import { ApolloProvider } from "@apollo/client";
-// import client from "./apollo/apolloClient"; 
+import { ApolloProvider } from "@apollo/client";
+import client from "./apollo/apolloClient"; 
 import SearchList from "./components/searchList";
 import ReadingList from "./components/readingList";
 import SearchBar from "./components/searchBar";
@@ -21,7 +21,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    // <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <SearchProvider>
           <Container className="App">
@@ -34,7 +34,7 @@ function App() {
           </Container>
         </SearchProvider>
       </ThemeProvider>
-    // </ApolloProvider>
+    </ApolloProvider>
   );
 }
 
