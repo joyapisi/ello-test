@@ -1,21 +1,27 @@
-import React from "react";
-import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from "@mui/material";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import React, { useState } from "react";
+import { List, ListItem, ListItemText } from "@mui/material";
+// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
-const SearchList = ({ books, onAddToReadingList }) => {
+const SearchList = () => {
+  const [searchResults, setSearchResults] = useState([]);
+
+  const updateSearchResults = (books) => {
+    setSearchResults(books);
+  };
+
   return (
     <List>
-      {books.map((book, index) => (
+      {searchResults.map((book, index) => (
         <ListItem key={index}>
           <ListItemText
             primary={book.title}
             secondary={book.author}
           />
-          <ListItemSecondaryAction>
+          {/* <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="add" onClick={() => onAddToReadingList(book)}>
               <AddCircleOutlineIcon />
             </IconButton>
-          </ListItemSecondaryAction>
+          </ListItemSecondaryAction> */}
         </ListItem>
       ))}
     </List>

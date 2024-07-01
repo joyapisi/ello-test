@@ -1,25 +1,23 @@
-import React from "react";
-import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import React, { useState } from "react";
+import { List, ListItem, ListItemText } from "@mui/material";
 
-const ReadingList =({ readingList, onRemoveFromReadingList })=>{
-    return(
-<List>
-      {readingList.map((book, index) => (
+const ReadingList = () => {
+  const [readingList, setReadingList] = useState([]);
+
+  // Placeholder for the function to update the reading list
+  const updateReadingList = (list) => {
+    setReadingList(list);
+  };
+
+  return (
+    <List>
+      {readingList.map((item, index) => (
         <ListItem key={index}>
-          <ListItemText
-            primary={book.title}
-            secondary={book.author}
-          />
-          <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="delete" onClick={() => onRemoveFromReadingList(book)}>
-              <DeleteIcon />
-            </IconButton>
-          </ListItemSecondaryAction>
+          <ListItemText primary={item.title} />
         </ListItem>
       ))}
     </List>
-    )
-}
+  );
+};
 
 export default ReadingList;
