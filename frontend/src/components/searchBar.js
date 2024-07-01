@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, TextField } from "@mui/material";
+import {TextField } from "@mui/material";
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
@@ -9,8 +9,8 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div style={{ background: "black", padding: "20px" }}>
-        <TextField
+    <div id="search cntainer" >
+        <TextField 
           label="Search an Ello Book"
           variant="outlined"
           value={query}
@@ -18,12 +18,12 @@ const SearchBar = ({ onSearch }) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter') handleSearch();
           }}
-          InputLabelProps={{
-            style: { color: "white" }, 
-          }}
-          inputProps={{
-            style: { color: "white" },
-          }}
+          // InputLabelProps={{
+          //   // style: { color: "white" }, 
+          // }}
+          // inputProps={{
+          //   // style: { color: "white" },
+          // }}
         />
     </div>
   );
