@@ -1,4 +1,5 @@
 import "./App.css";
+import SearchBar from "./components/searchBar";
 
 function App() {
   return (
@@ -6,6 +7,9 @@ function App() {
       <header className="App-header">
         <p>My Ello Project</p>
       </header>
+      <div>
+      <SearchBar />
+      </div>
     </div>
   );
 }
