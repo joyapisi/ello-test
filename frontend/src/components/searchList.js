@@ -1,6 +1,6 @@
 import React from "react";
 import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const SearchList = ({ books, onAddToReadingList }) => {
   return (
@@ -13,7 +13,7 @@ const SearchList = ({ books, onAddToReadingList }) => {
           />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="add" onClick={() => onAddToReadingList(book)}>
-              <AddIcon />
+              <AddCircleOutlineIcon />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItem>
