@@ -6,7 +6,10 @@ const SearchBar = () => {
     <div>
       <p>Hello Search Bar</p>
       <Box>
-        <TextField />
+        <TextField 
+        label="Search"
+        variant="Outlined"
+        />
       </Box>
     </div>
   );
