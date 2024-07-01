@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import {Box, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import SearchContext from "./searchContext";
 
 const SearchBar = () => {
@@ -15,17 +15,17 @@ const SearchBar = () => {
   };
 
   return (
-    <Box id="search cntainer" >
-        <TextField 
-          label="Search an Ello Book"
-          variant="contained"
-          color="primary"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') handleSearch();
-          }}
-        />
+    <Box id="search-container">
+      <TextField 
+        label="Search an Ello Book"
+        variant="contained"
+        color="primary"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') handleSearch();
+        }}
+      />
     </Box>
   );
 };

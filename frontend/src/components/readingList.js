@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { List, ListItem, ListItemText } from "@mui/material";
-import SearchManager from "./searchContext";
+import SearchContext from "./searchContext";
 
 const ReadingList = () => {
-  const {readingList}= useContext (SearchManager);
+  const { readingList } = useContext(SearchContext);
 
   return (
     <List>
