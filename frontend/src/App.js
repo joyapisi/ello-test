@@ -1,10 +1,13 @@
 import React from "react";
 import { Container, Typography } from "@mui/material";
-import SearchBar from "./components/SearchBar";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SearchList from "./components/searchList";
 import ReadingList from "./components/readingList";
-import SearchManager from "./components/searchManager";
+import SearchBar from "./components/searchBar";
+import SearchManager, { SearchProvider } from "./components/searchContext";
+import { ApolloProvider } from "@apollo/client";
+import client from "./components/apolloClient"; 
+
 
 const theme = createTheme({
   palette: {
@@ -19,8 +22,9 @@ const theme = createTheme({
 
 function App() {
   return (
+    <ApolloProvider client={client}>
     <ThemeProvider theme={theme}>
-      <SearchManager>
+      <SearchProvider>
       <Container className="App">
         <Typography variant="h4" component="p">
           My Ello Project
@@ -29,8 +33,9 @@ function App() {
         <SearchList />
         <ReadingList />
       </Container>
-      </SearchManager>
+      </SearchProvider>
     </ThemeProvider>
+    </ApolloProvider>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { List, ListItem, ListItemText } from "@mui/material";
-import SearchManager from "./searchManager";
+import SearchManager from "./searchContext";
 // import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const SearchList = () => {

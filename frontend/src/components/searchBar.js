@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import {Box, TextField } from "@mui/material";
-import SearchManager from "./searchManager";
+import SearchContext from "./searchContext";
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
@@ -11,7 +11,7 @@ const SearchBar = () => {
       { title: `Result for ${query} 1` },
       { title: `Result for ${query} 2` },
     ];
-    setSearchResults(books);
+    setSearchResults(results);
   };
 
   return (

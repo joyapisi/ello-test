@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 const SearchContext = createContext();
 
-export const SearchManager = ({ children }) => {
+export const SearchProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [readingList, setReadingList] = useState([]);
 
@@ -13,4 +13,4 @@ export const SearchManager = ({ children }) => {
   );
 };
 
-export default SearchManager;
+export default SearchContext;
