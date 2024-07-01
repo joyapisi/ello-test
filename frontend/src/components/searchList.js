@@ -1,7 +1,13 @@
 import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
 import React from "react";
 
+
 const SearchList = () => {
+    
+    const filteredBooks = data.books.filter(book =>
+        book.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      
     return(
         <div>
         <p>search List here</p>
