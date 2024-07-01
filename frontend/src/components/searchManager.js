@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react';
 
-export const SearchContext = createContext();
+const SearchContext = createContext();
 
-export const SearchProvider = ({ children }) => {
+export const SearchManager = ({ children }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [readingList, setReadingList] = useState([]);
 
@@ -12,3 +12,5 @@ export const SearchProvider = ({ children }) => {
     </SearchContext.Provider>
   );
 };
+
+export default SearchManager;

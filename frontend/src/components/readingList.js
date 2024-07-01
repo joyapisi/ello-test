@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { List, ListItem, ListItemText } from "@mui/material";
+import SearchManager from "./searchManager";
 
 const ReadingList = () => {
-  const [readingList, setReadingList] = useState([]);
-
-  // Placeholder for the function to update the reading list
-  const updateReadingList = (list) => {
-    setReadingList(list);
-  };
+  const {readingList}= useContext (SearchManager);
 
   return (
     <List>

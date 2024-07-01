@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SearchList from "./components/searchList";
 import ReadingList from "./components/readingList";
+import SearchManager from "./components/searchManager";
 
 const theme = createTheme({
   palette: {
@@ -11,7 +12,7 @@ const theme = createTheme({
       main: '#3f51b5', // Primary key color
     },
     secondary: {
-      main: '#f50057', // Secondary key color
+      main: '#f50057',
     },
   },
 });
@@ -19,6 +20,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <SearchManager>
       <Container className="App">
         <Typography variant="h4" component="p">
           My Ello Project
@@ -27,6 +29,7 @@ function App() {
         <SearchList />
         <ReadingList />
       </Container>
+      </SearchManager>
     </ThemeProvider>
   );
 }

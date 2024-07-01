@@ -1,15 +1,21 @@
-import React, { useState } from "react";
-import {TextField } from "@mui/material";
+import React, { useContext, useState } from "react";
+import {Box, TextField } from "@mui/material";
+import SearchManager from "./searchManager";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
   const [query, setQuery] = useState('');
+  const { setSearchResults } = useContext(SearchContext);
 
   const handleSearch = () => {
-    onSearch(query);
+    const results = [
+      { title: `Result for ${query} 1` },
+      { title: `Result for ${query} 2` },
+    ];
+    setSearchResults(books);
   };
 
   return (
-    <div id="search cntainer" >
+    <Box id="search cntainer" >
         <TextField 
           label="Search an Ello Book"
           variant="contained"
@@ -20,7 +26,7 @@ const SearchBar = ({ onSearch }) => {
             if (e.key === 'Enter') handleSearch();
           }}
         />
-    </div>
+    </Box>
   );
 };
 
