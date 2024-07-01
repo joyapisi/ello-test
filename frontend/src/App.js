@@ -4,6 +4,7 @@ import SearchBar from "./components/searchBar";
 import SearchList from "./components/searchList";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
   const [readingList, setReadingList] = useState([]);
 
   const handleSearch = (query) => {
@@ -18,7 +19,8 @@ function App() {
     <div className="App">
       <p>My Ello Project</p>
       <SearchBar onSearch={handleSearch}/>
-      <SearchList searchQuery={searchQuery} onAddToReadingList={handleAddToReadingList}/>  
+      <SearchList searchQuery={searchQuery} onAddToReadingList={handleAddToReadingList}/> 
+      <ReadingList readingList={readingList} onRemoveFromReadingList={handleRemoveFromReadingList}/> 
     </div>
   );
 }
