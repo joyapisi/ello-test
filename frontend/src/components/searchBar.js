@@ -18,12 +18,6 @@ const SearchBar = ({ onSearch }) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter') handleSearch();
           }}
-          // InputLabelProps={{
-          //   // style: { color: "white" }, 
-          // }}
-          // inputProps={{
-          //   // style: { color: "white" },
-          // }}
         />
     </div>
   );
