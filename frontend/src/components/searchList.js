@@ -7,11 +7,13 @@ const SearchList = () => {
     const filteredBooks = data.books.filter(book =>
         book.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      
+
     return(
         <div>
         <p>search List here</p>
-        <Grid>
+        <Grid container>
+        {filteredBooks.map(book => (
+            <Grid item key={book.title} >
           <Card>
             <CardContent>
               <Typography variant="h6">title</Typography>
@@ -19,6 +21,8 @@ const SearchList = () => {
               <Button>Add Ello Book</Button>
             </CardContent>
           </Card>
+          </Grid>
+        ))}
         </Grid>
     </div>
     )
