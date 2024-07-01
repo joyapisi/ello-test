@@ -12,7 +12,8 @@ const SearchBar = ({ onSearch }) => {
     <div id="search cntainer" >
         <TextField 
           label="Search an Ello Book"
-          variant="outlined"
+          variant="contained"
+          color="primary"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => {

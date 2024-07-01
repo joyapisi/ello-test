@@ -1,6 +1,12 @@
-.App {
-  text-align: center;
+body {
   margin: 0;
   padding: 20px;
   height: 100%;
+  font-family: 'Mulish', sans-serif;
+  background-color: #FFF;
+  color: #335c6e;
+}
+
+.App {
+  text-align: center;
 }
