@@ -4,11 +4,19 @@ import React from "react";
 import { GET_BOOKS } from "./queries";
 
 const SearchList = ({searchQuery}) => {
-    const {data} = useQuery(GET_BOOKS);
-    const filteredBooks = data.books.filter((book) =>
+  const {data, error, loading} = useQuery(GET_BOOKS);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const filteredBooks = data.books.filter((book) =>
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+  
   return (
     <div>
       <p>search List here</p>
