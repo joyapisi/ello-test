@@ -2,7 +2,7 @@ import React from "react";
 import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const ReadingList =()=>{
+const ReadingList =({ readingList, onRemoveFromReadingList })=>{
     return(
 <List>
       {readingList.map((book, index) => (
