@@ -4,12 +4,21 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 const ReadingList =()=>{
     return(
-        <List>
-            <ListItem>
-                <p>The list</p>
-            </ListItem>
-        </List>
-      
+<List>
+      {readingList.map((book, index) => (
+        <ListItem key={index}>
+          <ListItemText
+            primary={book.title}
+            secondary={book.author}
+          />
+          <ListItemSecondaryAction>
+            <IconButton edge="end" aria-label="delete" onClick={() => onRemoveFromReadingList(book)}>
+              <DeleteIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
+      ))}
+    </List>
     )
 }
 
