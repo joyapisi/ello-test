@@ -1,10 +1,10 @@
 import { useQuery } from "@apollo/client";
 import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
 import React from "react";
-import { GET_BOOKS } from "../queries";
+import { GET_BOOKS } from "./queries";
 
 const SearchList = ({searchQuery}) => {
-    const {data} = iseQuery(GET_BOOKS);
+    const {data} = useQuery(GET_BOOKS);
     const filteredBooks = data.books.filter((book) =>
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
