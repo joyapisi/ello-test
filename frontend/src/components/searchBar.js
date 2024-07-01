@@ -1,41 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
+  const [query, setQuery] = useState('');
+
+  const handleSearch = () => {
+    onSearch(query);
+  };
+
   return (
-    <div>
-      <p>Hello Search Bar</p>
-      <Box>
-        <TextField 
-        label="Search"
-        variant="Outlined"
+    <div style={{ background: "black", padding: "20px" }}>
+        <TextField
+          label="Search an Ello Book"
+          variant="outlined"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleSearch();
+          }}
+          InputLabelProps={{
+            style: { color: "white" }, 
+          }}
+          inputProps={{
+            style: { color: "white" },
+          }}
         />
-      </Box>
     </div>
   );
 };
 
 export default SearchBar;
-// import React, { useState } from 'react';
-// import { Box, TextField } from "@mui/material";
-
-// const SearchBar = ({ onSearch }) => {
-//   const [query, setQuery] = useState('');
-
-//   const handleSearch = () => {
-//     onSearch(query);
-
-//   return (
-//     <Box>
-//       <TextField id="outlined-basic" label="Search for books" variant="outlined"
-//         value={query}
-//         onChange={(e) => setQuery(e.target.value)}
-//         onKeyDown={(e) => {
-//           if (e.key === 'Enter') handleSearch();
-//         }}/>
-//     </Box >
-//   );
-// }
-// };
-
-// export default SearchBar;
