@@ -1,6 +1,5 @@
-import { Grid } from "@mui/material";
+import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
 import React from "react";
-
 
 const SearchList = () => {
     return(
