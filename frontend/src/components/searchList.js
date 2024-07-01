@@ -12,9 +12,9 @@ const SearchList = ({searchQuery}) => {
   return (
     <div>
       <p>search List here</p>
-      <Grid container>
+      <Grid container spacing={2}>
         {filteredBooks.map((book) => (
-          <Grid item key={book.title}>
+          <Grid item key={book.title} xs={12} sm={6} md={4}>
             <Card>
               <CardContent>
                 <Typography variant="h6">title</Typography>
