@@ -4,16 +4,54 @@
   font-family: 'Mulish', sans-serif;
   padding: 20px;
   align-items: center;
+  /* justify-content: center; */
 }
 
 h1, h2 {
   color: #335c6e;
 }
 
+h1 {
+  background-color: '#FAAD00';  
+  width: '100%';
+  text-align: 'center';
+}
+
 p {
-  color: #5ACCCC;
+  color: #28B8B8;
+}
+
+.reading-list-title {
+  position: 'fixed';
+  width: '100%';
+  text-align: 'center';
 }
 
 .search-container {
-  gap: 20px;
+  display: flex;
+  gap: 150px;
+  border-radius: 5px;
+  padding:5px;
+}
+
+.searchbar-container {
+  position: relative;
+  padding: 15px;
+  z-index: 2;
+  width: 600px;
+  background-color: #28B8B8;
+}
+
+.reading-list-container {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+  background-color: #fff;
+  padding: 20px 10px;
+  max-height: 80vh; 
+  width: 90%;
+  gap: 10px; 
 }
