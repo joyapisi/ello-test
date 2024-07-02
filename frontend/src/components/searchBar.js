@@ -11,13 +11,14 @@ const SearchBar = ({ onSearch }) => {
   return (
     <div class="search-container" >
       <TextField
+        sx={{color:'#CFFAFA', border:'#FABD33'}}
         label="Search Ello books"
         variant="outlined"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       <Button 
-      sx={{backgroundColor:'#335C6E', color:'#CFFAFA', width:'200px'}}
+      sx={{backgroundColor:'#FAAD00', width:'200px'}}
       variant="contained" 
       onClick={handleSearch}>
         Search
