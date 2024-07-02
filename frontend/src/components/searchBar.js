@@ -1,32 +1,29 @@
-import React, { useContext, useState } from "react";
-import { Box, TextField } from "@mui/material";
-import SearchContext from "./searchContext";
+import React, { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
-  const { setSearchResults } = useContext(SearchContext);
 
   const handleSearch = () => {
-    const results = [
-      { title: `Result for ${query} 1` },
-      { title: `Result for ${query} 2` },
-    ];
-    setSearchResults(results);
+    onSearch(query);
   };
 
   return (
-    <Box id="search-container">
-      <TextField 
-        label="Search an Ello Book"
+    <div className="search-container" >
+      <TextField
+        sx={{ marginRight: '100px' }}
+        label="Search for books"
         variant="outlined"
-        color="primary"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') handleSearch();
-        }}
       />
-    </Box>
+      <Button 
+      sx={{backgroundColor:'4AA088', color:'#335C6E', width:'200px'}}
+      variant="contained" 
+      onClick={handleSearch}>
+        Search
+      </Button>
+    </div>
   );
 };
 

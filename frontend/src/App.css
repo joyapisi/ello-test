@@ -1,12 +1,19 @@
-body {
-  margin: 0;
-  padding: 20px;
-  height: 100%;
+.App {
+  display: flex;
+  flex-direction: column;
   font-family: 'Mulish', sans-serif;
-  background-color: #FFF;
+  padding: 20px;
+  align-items: center;
+}
+
+h1, h2 {
   color: #335c6e;
 }
 
-.App {
-  text-align: center;
+p {
+  color: #5ACCCC;
+}
+
+.search-container {
+  gap: 20px;
 }

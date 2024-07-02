@@ -1,18 +1,18 @@
-import React, { useContext } from "react";
-import { List, ListItem, ListItemText } from "@mui/material";
-import SearchContext from "./searchContext";
+import React from 'react';
+import { List, ListItem, ListItemText, Button } from '@mui/material';
 
-const SearchList = () => {
-  const { searchResults } = useContext(SearchContext);
-
+const SearchList = ({ books, onAdd }) => {
   return (
-    <List>
-      {searchResults.map((result, index) => (
-        <ListItem key={index}>
-          <ListItemText
-            primary={result.title}
-            secondary={result.author}
-          />
+      <List sx={{}}>
+      {books.map((book) => (
+        <ListItem key={book.title} alignItems="flex-start">
+          <ListItemText primary={book.title} secondary={book.author} />
+          <Button 
+          sx={{backgroundColor:'#5ACCCC',  width:'200px'}}
+          variant="contained" 
+          onClick={() => onAdd(book)}>
+            Add to Reading List
+          </Button>
         </ListItem>
       ))}
     </List>
