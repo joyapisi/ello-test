@@ -1,18 +1,8 @@
 import React from 'react';
-import { List, ListItem, ListItemText, Button } from '@mui/material';
+import { List, ListItem, ListItemText, Button, Paper } from '@mui/material';
 
 const SearchList = ({ books, onAdd }) => {
   return (
-    <Paper
-      style={{
-        position: 'absolute',
-        top: '60px', // Adjust based on your search bar height and margin
-        width: '100%',
-        maxHeight: '200px',
-        overflowY: 'auto',
-        zIndex: 1000,
-      }}
-    >
       <List>
       {books.map((book) => (
         <ListItem key={book.title} alignItems="flex-start">
@@ -23,7 +13,6 @@ const SearchList = ({ books, onAdd }) => {
         </ListItem>
       ))}
     </List>
-  </Paper>
   );
 };
 
