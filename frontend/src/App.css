@@ -11,8 +11,20 @@ h1, h2 {
   color: #335c6e;
 }
 
+h1 {
+  background-color: '#FAAD00';  
+  width: '100%';
+  text-align: 'center';
+}
+
 p {
   color: #28B8B8;
+}
+
+.reading-list-title {
+  position: 'fixed';
+  width: '100%';
+  text-align: 'center';
 }
 
 .search-container {
@@ -31,14 +43,15 @@ p {
 }
 
 .reading-list-container {
+  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; 
   background-color: #fff;
-  padding: 20px;
+  padding: 20px 10px;
   max-height: 80vh; 
-  overflow-y: auto; 
-  width: 80%; 
+  width: 90%;
+  gap: 10px; 
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
@@ -20,6 +20,8 @@ const GET_BOOKS = gql`
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [readingList, setReadingList] = useState([]);
+  const [searchVisible, setSearchVisible] = useState(false);
+  const searchRef = useRef(null);
   const { data } = useQuery(GET_BOOKS);
 
   const handleSearch = (query) => {
@@ -39,17 +41,33 @@ function App() {
     setReadingList((prevList) => prevList.filter((b) => b.title !== book.title));
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setSearchVisible(false);
+      }
+    };
+
+    if (searchVisible) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [searchVisible]);
+
   return (
     <div className="App">
-      <h1>My Ello Project</h1>
-      <div className="searchbar-container">
-        <SearchBar onSearch={handleSearch} />
+      <h2 className="reading-list-title">Reading List</h2>
+      <div className="searchbar-container" ref={searchRef}>
+        <SearchBar onSearch={handleSearch} 
+        setSearchVisible={setSearchVisible}/>
       
         <SearchList books={searchResults} onAdd={handleAddToReadingList} />
         </div>
-          <h2 sx={{backgroundColor:'#FAAD00'}}>
-            Reading List
-          </h2>
           <div className="reading-list-container">
             <ReadingList books={readingList} onRemove={handleRemoveFromReadingList} />
           </div>

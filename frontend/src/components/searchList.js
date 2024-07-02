@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, List, ListItem, ListItemText } from '@mui/material';
 
-const SearchList = ({ books,onAdd, book }) => {
+const SearchList = ({ books,onAdd }) => {
 
   return (
     <Box sx={{ maxHeight: '400px', overflowY: 'auto' }}>
@@ -12,7 +12,7 @@ const SearchList = ({ books,onAdd, book }) => {
                         primary={book.title} 
                         secondary={book.author} />
                         <Button 
-                        sx={{ backgroundColor:'#5ACCCC', color:'#FFF'}}
+                        sx={{ backgroundColor:'#5ACCCC', color:'#FFF', boxShadow: '0 10px 20px rgba(0, 0, 5, 0.15)'}}
                         onClick={() => onAdd(book)}>
                           Add To Reading List
                         </Button>
