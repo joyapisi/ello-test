@@ -1,21 +1,18 @@
-import React from "react";
-import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from "@mui/material";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import React, { useContext } from "react";
+import { List, ListItem, ListItemText } from "@mui/material";
+import SearchContext from "./searchContext";
 
-const SearchList = ({ books, onAddToReadingList }) => {
+const SearchList = () => {
+  const { searchResults } = useContext(SearchContext);
+
   return (
     <List>
-      {books.map((book, index) => (
+      {searchResults.map((result, index) => (
         <ListItem key={index}>
           <ListItemText
-            primary={book.title}
-            secondary={book.author}
+            primary={result.title}
+            secondary={result.author}
           />
-          <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="add" onClick={() => onAddToReadingList(book)}>
-              <AddCircleOutlineIcon />
-            </IconButton>
-          </ListItemSecondaryAction>
         </ListItem>
       ))}
     </List>
@@ -23,38 +20,3 @@ const SearchList = ({ books, onAddToReadingList }) => {
 };
 
 export default SearchList;
-
-
-// import React from "react";
-// import { useQuery } from "@apollo/client";
-// import { Grid, Button, Card, CardContent, Typography } from "@mui/material";
-// import { GET_BOOKS } from "./queries";
-
-// const SearchResults = ({ searchQuery, onAddToReadingList }) => {
-//   const { loading, error, data } = useQuery(GET_BOOKS);
-
-//   if (loading) return <p>Loading...</p>;
-//   if (error) return <p>Error: {error.message}</p>;
-
-//   const filteredBooks = data.books.filter(book =>
-//     book.title.toLowerCase().includes(searchQuery.toLowerCase())
-//   );
-
-//   return (
-//     <Grid container spacing={2}>
-//       {filteredBooks.map(book => (
-//         <Grid item key={book.title} xs={12} sm={6} md={4}>
-//           <Card>
-//             <CardContent>
-//               <Typography variant="h6">{book.title}</Typography>
-//               <Typography variant="body2" color="textSecondary">{book.author}</Typography>
-//               <Button onClick={() => onAddToReadingList(book)}>Add to Reading List</Button>
-//             </CardContent>
-//           </Card>
-//         </Grid>
-//       ))}
-//     </Grid>
-//   );
-// };
-
-// export default SearchResults;

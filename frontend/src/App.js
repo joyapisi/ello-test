@@ -1,32 +1,40 @@
-import React, { useState } from "react";
-import "./App.css";
-import SearchBar from "./components/searchBar";
+import React from "react";
+import { Container, Typography } from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { SearchProvider } from "./components/searchContext";
+import { ApolloProvider } from "@apollo/client";
+import client from "./apollo/apolloClient"; 
 import SearchList from "./components/searchList";
 import ReadingList from "./components/readingList";
+import SearchBar from "./components/searchBar";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#3f51b5',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+  },
+});
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [readingList, setReadingList] = useState([]);
-
-  const handleSearch = (query) => {
-    console.log("Search query:", query);
-  };
-
-  const handleAddToReadingList = (book) => {
-    setReadingList([...readingList, book]);
-  };
-
-  const handleRemoveFromReadingList = (book) => {
-    setReadingList([...readingList, book]);
-  };
-
   return (
-    <div className="App">
-      <p>My Ello Project</p>
-      <SearchBar onSearch={handleSearch}/>
-      <SearchList searchQuery={searchQuery} onAddToReadingList={handleAddToReadingList}/> 
-      <ReadingList readingList={readingList} onRemoveFromReadingList={handleRemoveFromReadingList}/> 
-    </div>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <SearchProvider>
+          <Container className="App">
+            <Typography variant="h4" component="p">
+              My Ello Project
+            </Typography>
+            <SearchBar />
+            <SearchList />
+            <ReadingList />
+          </Container>
+        </SearchProvider>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
 
