@@ -1,18 +1,22 @@
-import React, { useContext } from "react";
-import { List, ListItem, ListItemText } from "@mui/material";
-import SearchContext from "./searchContext";
+import React from 'react';
+import { Grid, Button } from '@mui/material';
 
-const ReadingList = () => {
-  const { readingList } = useContext(SearchContext);
-
+const ReadingList = ({ books, onRemove }) => {
   return (
-    <List>
-      {readingList.map((item, index) => (
-        <ListItem key={index}>
-          <ListItemText primary={item.title} />
-        </ListItem>
+    <Grid container spacing={2}>
+      {books.map((book) => (
+        <Grid item xs={12} sm={6} md={4} key={book.title}>
+          <div>
+            <img src={book.coverPhotoURL} alt={book.title} style={{ width: '100%' }} />
+            <h3>{book.title}</h3>
+            <p>{book.author}</p>
+            <Button variant="contained" onClick={() => onRemove(book)}>
+              Remove
+            </Button>
+          </div>
+        </Grid>
       ))}
-    </List>
+    </Grid>
   );
 };
 
