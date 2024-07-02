@@ -18,7 +18,7 @@ const SearchBar = () => {
     <Box id="search-container">
       <TextField 
         label="Search an Ello Book"
-        variant="contained"
+        variant="outlined"
         color="primary"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
