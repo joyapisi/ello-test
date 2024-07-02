@@ -8,7 +8,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-- [🚀 Live Demo](#live-demo)    
+- [🚀 Live Demo Coming Soon](#live-demo)    
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
