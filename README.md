@@ -20,7 +20,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 [Portfolio] <a name="Portfolio"></a>
+# 📖 [Ello-Test] <a name="Portfolio"></a>
 
 
 **[Ello-Test]** is a GraphQL, typescript, and Material UI project that can store, filter, delete, and add books for educational purposes to revolutionize the way children learn to read. 
