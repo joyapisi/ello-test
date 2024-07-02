@@ -44,7 +44,9 @@ function App() {
       <h1>My Ello Project</h1>
       <SearchBar onSearch={handleSearch} />
       <SearchList books={searchResults} onAdd={handleAddToReadingList} />
-      <h2>Reading List</h2>
+      <h2
+      sx={{backgroundColor:'#FAAD00'}}
+      >Reading List</h2>
       <ReadingList books={readingList} onRemove={handleRemoveFromReadingList} />
     </div>
   );

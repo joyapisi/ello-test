@@ -8,9 +8,11 @@ const ReadingList = ({ books, onRemove }) => {
         <Grid item xs={12} sm={6} md={4} key={book.title}>
           <div>
             <img src={book.coverPhotoURL} alt={book.title} style={{ width: '100%' }} />
-            <h3>{book.title}</h3>
+            <h4>{book.title}</h4>
             <p>{book.author}</p>
-            <Button variant="contained" onClick={() => onRemove(book)}>
+            <Button 
+            sx={{backgroundColor:'#F76434', color:'#FFE6DC', width:'200px'}}
+            variant="contained" onClick={() => onRemove(book)}>
               Remove
             </Button>
           </div>

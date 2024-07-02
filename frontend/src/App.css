@@ -11,9 +11,10 @@ h1, h2 {
 }
 
 p {
-  color: #5ACCCC;
+  color: #28B8B8;
 }
 
 .search-container {
-  gap: 20px;
+  display: flex;
+  gap: 130px;
 }
