@@ -10,8 +10,9 @@ const SearchList = ({ books,onAdd, book }) => {
                     <ListItem key={book.id}>
                         <ListItemText primary={book.title} secondary={book.author} />
                         <Button 
+                        sx={{ backgroundColor:'#53C2C2', color:'#fff'}}
                         onClick={() => onAdd(book)}>
-                          Add Book To Reading List
+                          Add To Reading List
                         </Button>
                     </ListItem>
                 ))}

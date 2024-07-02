@@ -42,13 +42,18 @@ function App() {
   return (
     <div className="App">
       <h1>My Ello Project</h1>
-      <SearchBar onSearch={handleSearch} />
-      <SearchList books={searchResults} onAdd={handleAddToReadingList} />
-      <h2
-      sx={{backgroundColor:'#FAAD00'}}
-      >Reading List</h2>
-      <ReadingList books={readingList} onRemove={handleRemoveFromReadingList} />
-    </div>
+      <div className="searchbar-container">
+        <SearchBar onSearch={handleSearch} />
+      
+        <SearchList books={searchResults} onAdd={handleAddToReadingList} />
+        </div>
+          <h2 sx={{backgroundColor:'#FAAD00'}}>
+            Reading List
+          </h2>
+          <div className="reading-list-container">
+            <ReadingList books={readingList} onRemove={handleRemoveFromReadingList} />
+          </div>
+      </div>
   );
 }
 
