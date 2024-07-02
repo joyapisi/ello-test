@@ -9,14 +9,18 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className="search-container" >
       <TextField
+        sx={{ marginRight: '100px' }}
         label="Search for books"
         variant="outlined"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <Button variant="contained" onClick={handleSearch}>
+      <Button 
+      sx={{backgroundColor:'4AA088', color:'#335C6E', width:'200px'}}
+      variant="contained" 
+      onClick={handleSearch}>
         Search
       </Button>
     </div>

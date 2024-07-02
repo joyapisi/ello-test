@@ -1,6 +1,9 @@
 .App {
+  display: flex;
+  flex-direction: column;
   font-family: 'Mulish', sans-serif;
   padding: 20px;
+  align-items: center;
 }
 
 h1, h2 {
@@ -9,4 +12,8 @@ h1, h2 {
 
 p {
   color: #5ACCCC;
+}
+
+.search-container {
+  gap: 20px;
 }
