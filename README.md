@@ -3,83 +3,112 @@
 
 # Ello Engineering Challenge
 
-👋 Hello,
-We are really excited about you potentially joining the team, so we designed this take home exercise to give you a taste of the challenges you may encounter in the role, and better understand what it would be like to work closely together.
+# 📗 Table of Contents
 
-Thanks for taking the time, and we hope to talk with you soon!
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+- [🚀 Live Demo](#live-demo)    
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+-- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-## About Ello
-
-Ello is a forward-thinking educational technology company dedicated to revolutionizing the way children learn to read. Our mission is to empower young readers with the tools they need to become proficient and passionate readers. We believe that fostering a love for reading is essential for a child's academic and personal growth.
-
-**Note:** Please don't fork this repository or create a pull request against it. Other applicants may take inspiration from it. You should create another repository for the challenge. Once the coding challenge is completed, email your solution back to our team at [fullstack2024@ello.com](mailto:fullstack2024@ello.com).
-
-
-## Challenge
-As part of our goal to have Ello impact as many children as we can, we offer an Ello web viewer product. [https://books.ello.com](https://books.ello.com/)
-
-
-We give this to certain schools for free to allow teachers to share our books with children. 
-You are building part of the teacher-facing UI for this product,
-namely the book assignment view, where teachers can assign books to students. 
-
-The view should have the following features:-
-
-1. A search bar that allows users to search for books by title.
-2. A list of search results that displays the book title, author, and a button to add the book to the students reading list.
-3. A reading list that displays all the books that the teacher has added.
-4. A button to remove a book from the reading list.
-
-You can build this view without the concept of a "student" and just have a single reading list for the teacher.
-
-### Requirements
-- Use React as the frontend framework.
-- Showcase the use of React hooks.
-- Use [material-ui](https://mui.com/material-ui/) as the component library.
-- Write your code in the `src/frontend` directory.
-- Create components as you feel is best suited for your solution
-<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="https://github.com/ElloTechnology/fullstack-take-home-test/assets/3518127/bc3eb7f7-489f-4304-93f4-032bbbd38c58">
+# 📖 [Portfolio] <a name="Portfolio"></a>
 
 
-### Data
-To get access to data that you will use for this challenge you can switch into the `src/backend` folder and run
+**[Ello-Test]** is a GraphQL, typescript, and Material UI project that can store, filter, delete, and add books for educational purposes to revolutionize the way children learn to read. 
 
-```bash
-npm install
+## 🛠 Built With  <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+  <summary>GraphQl</summary>
+  <summary>TypeScript</summary>
+  <summary>Material UI</summary>
+  <summary>Javascript runtime environment</summary>
+  <ul>
+    <li><a href="https://nodejs.org/en/">Node JS</a></li>
+  </ul>
+  <summary>Version control</summary>
+  <ul>
+    <li><a href="github.com">Git Hub</a></li>
+  </ul>
+</details>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+Yet to come: <li><a href=" ">Live Demo</a></li>
+
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+Creating your first "Ello Project" project
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+-A Git hub account
+-Git bash
+-Node JS
+-Visual Studio Code as your code editor
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd my-folder
+  git clone[ ([https://github.com/joyapisi/ThePortfolio.git](https://github.com/ElloTechnology/fullstack-take-home-test/tree/main))]
 ```
+1. Run
+   ```
+   npm install --save-dev hint@7.x
+   ```
+   *how to use npm: (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
 
-Then run the following command to start the server
+## 👥 Authors <a name="authors"></a>
 
-```bash
-npm start
-```
+👤 **Joy Phoebe**
 
-This start a Graphql server at the url `http://localhost:4000/`, the server has a single query `books` that returns a list of books. 
-
-```graphql
-query Books {
-  books {
-    author
-    coverPhotoURL
-    readingLevel
-    title
-  }
-}
-```
-
-You can use this query to get the list of books to display in your frontend. You may need to adjust the `coverPhotoURL` to be a valid URL. The photos are in the `src/frontend/assets` directory.
-
-### Styling Guidelines
-- Use the "Mulish" Google font
-- You can use the following colors (You don't have to use all but you can pick and choose from here)
-<img width="961" alt="Screenshot 2024-05-14 at 17 36 40" src="https://github.com/ElloTechnology/fullstack-take-home-test/assets/3518127/15922f8f-a7c7-4033-8405-76988e95afb3">
+- GitHub: (https://github.com/joyapisi)
+- Twitter: (https://twitter.com/joyapisi)
+- LinkedIn: (https://http://www.linkedin.com/in/joy-phoebe-00b80a13a)
 
 
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Feature_1]**
+Adding a function to remove/unsee the search bar when viewing the reading list 
+- [ ] **[Feature_2]**
+Adding better styling
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="Microverse Inc."></a>
+
+I'm thankful to Ello for providing this thrilling test.
 
 
-### You will be evaluated on
-- Code quality and organization.
-- User experience and design.
-- Beautiful and responsive UI.
+## 📝 License <a name="license"></a>
 
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
