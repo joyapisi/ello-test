@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
       sx={{backgroundColor:'#FAAD00', width:'200px'}}
       variant="contained" 
       onClick={handleSearch}>
-        Search
+        Searchs
       </Button>
     </div>
   );
